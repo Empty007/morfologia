@@ -1,0 +1,25 @@
+#! /bin/sh
+# ~/prj/src/bin/vsepbas compact_entrada  base_saida indice
+if [ ${#*} -eq 0 ]
+then
+    set -- -h
+fi
+
+case $1 in
+    -h) echo "
+vsepbas - separate the basis of an index from a compact representation
+Usage: vsepbas <input compact> <output basis> <index>
+"
+    exit
+    ;;
+esac
+
+if [ -z $2 ] || [ -z $3 ]
+then
+  echo "
+Usage: vsepbas <input compact> <output basis> <index>
+"
+  exit
+fi
+
+~/prj/src/vsepbas/vsepbas $1 $2 $3

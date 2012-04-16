@@ -1,0 +1,17 @@
+~/prj/bin/verobas ~/prj/bas/baseid.txt ~/prj/tmp/sai01.txt ~/prj/str/000100000.str
+echo 1
+~/prj/bin/verobas ~/prj/tmp/sai01.txt  ~/prj/tmp/ero_A.txt ~/prj/str/100111100.str
+echo 2
+~/prj/bin/vdilbas ~/prj/bas/baseid.txt  ~/prj/tmp/sai01.txt ~/prj/str/001000100.str
+echo 3
+~/prj/bin/vdilbas ~/prj/tmp/sai01.txt  ~/prj/tmp/dil_C.txt ~/prj/str/000000100.str
+echo 4
+~/prj/bin/vintbas ~/prj/tmp/ero_A.txt ~/prj/tmp/dil_C.txt ~/prj/tmp/inf1.txt
+echo 5
+~/prj/bin/vintbas ~/prj/tmp/ero_A.txt ~/prj/bas/baseid.txt ~/prj/tmp/inf2.txt
+echo 6
+~/prj/bin/vunibas ~/prj/tmp/inf1.txt ~/prj/tmp/inf2.txt ~/prj/tmp/res1.txt
+
+~/prj/bin/vdspbas ~/prj/tmp/res1.txt ~/prj/tmp/dsp1.txt 2
+
+

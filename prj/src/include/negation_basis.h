@@ -1,0 +1,1 @@
+int negation_basis();

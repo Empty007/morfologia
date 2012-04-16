@@ -1,0 +1,30 @@
+# sequencia de duas aberturas
+# $\dil_A\ero_A\ero_B\dil_B$
+
+~/prj/bin/vdilbas ~/prj/bas/baseid.txt ~/prj/tmp/sai01.txt ~/prj/str/000111000.str
+~/prj/bin/verobas ~/prj/tmp/sai01.txt  ~/prj/tmp/sai02.txt ~/prj/str/000111000.str
+~/prj/bin/verobas ~/prj/tmp/sai02.txt  ~/prj/tmp/sai01.txt ~/prj/str/010111010.str
+~/prj/bin/vdilbas ~/prj/tmp/sai01.txt  ~/prj/tmp/sai02.txt ~/prj/str/010111010.str
+
+cp ~/prj/tmp/sai02.txt ~/prj/tmp/base009.txt
+~/prj/bin/vdspbas ~/prj/tmp/sai02.txt ~/prj/tmp/sai03.txt  600
+cp ~/prj/tmp/sai03.txt ~/prj/tmp/base009.dsp
+
+case $1 in
+  -f) # base da sequencia das duas aberturas
+      ~/prj/bin/vdspbas ~/prj/tmp/sai02.txt ~/prj/tmp/sai03.txt  200
+      cat ~/prj/tmp/sai03.txt | less
+      rm -f ~/prj/tmp/sai03.txt
+  ;;
+esac
+
+# geting e compact representation
+
+~/prj/bin/vfactor  ~/prj/tmp/sai02.txt ~/prj/tmp/sai07.txt
+~/prj/bin/vdspfact ~/prj/tmp/sai07.txt ~/prj/tmp/sai08.txt
+# cat ~/prj/tmp/sai08.txt | less
+# enscript -M Letter -2r ~/prj/tmp/sai08.txt | lpr -Pcompasso@feijoada
+rm  -f ~/prj/tmp/sai08.txt ~/prj/tmp/sai07.txt
+rm -f ~/prj/tmp/sai01.txt ~/prj/tmp/sai02.txt
+
+

@@ -1,0 +1,20 @@
+# sequencia de duas aberturas
+# $\dil_A\ero_A\ero_A\dil_A$
+
+~/prj/bin/vdilbas ~/prj/bas/baseid.txt ~/prj/tmp/sai01.txt ~/prj/str/000111000.str
+~/prj/bin/verobas ~/prj/tmp/sai01.txt  ~/prj/tmp/sai02.txt ~/prj/str/000111000.str
+~/prj/bin/verobas ~/prj/tmp/sai02.txt  ~/prj/tmp/sai01.txt ~/prj/str/000101000.str
+~/prj/bin/vdilbas ~/prj/tmp/sai01.txt  ~/prj/tmp/sai02.txt ~/prj/str/000101000.str
+
+~/prj/bin/vdspbas ~/prj/tmp/sai02.txt ~/prj/tmp/base020.dsp  200
+# cat ~/prj/tmp/base020.dsp | less
+enscript -M Letter -2r ~/prj/tmp/base020.dsp | lpr -Pcompasso@feijoada
+
+# geting e compact representation
+
+~/prj/bin/vfactor  ~/prj/tmp/sai02.txt ~/prj/tmp/sai07.txt
+~/prj/bin/vdspfact ~/prj/tmp/sai07.txt ~/prj/tmp/seqabe020.txt
+# cat ~/prj/tmp/seqabe020.txt | less
+enscript -M Letter -2r ~/prj/tmp/seqabe020.txt | lpr -Pcompasso@feijoada
+
+

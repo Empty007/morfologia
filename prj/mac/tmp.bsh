@@ -1,0 +1,10 @@
+~/prj/bin/verobas /home/ronaldo/prj/tmp/tmp004 /home/ronaldo/prj/tmp/tmp003 ~/prj/str/000111000.str
+
+~/prj/bin/vdilbas /home/ronaldo/prj/tmp/tmp003 /home/ronaldo/prj/tmp/tmp001 ~/prj/str/000111000.str
+
+
+~/prj/bin/vdspbas /home/ronaldo/prj/tmp/tmp001 /home/ronaldo/prj/tmp/tmp005 5000
+
+cat /home/ronaldo/prj/tmp/tmp005 | less
+
+rm ~/prj/tmp/tmp*

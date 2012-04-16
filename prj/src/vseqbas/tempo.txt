@@ -1,0 +1,56 @@
+  PID TTY          TIME CMD
+ 4800 ?        00:00:17 xterm
+ 4801 pts/4    00:00:00 bash
+20762 pts/7    00:00:00 bash
+25083 pts/7    00:00:00 sh
+25598 pts/7    22:06:41 cresc
+26613 pts/7    00:00:00 ps
+Wed May 10 17:41:58 BRT 2000
+  PID TTY          TIME CMD
+ 4800 ?        00:00:17 xterm
+ 4801 pts/4    00:00:00 bash
+20762 pts/7    00:00:00 bash
+25083 pts/7    00:00:00 sh
+25598 pts/7    23:44:05 cresc
+26653 pts/7    00:00:00 ps
+Wed May 10 19:19:28 BRT 2000
+  PID TTY          TIME CMD
+ 4800 ?        00:00:17 xterm
+ 4801 pts/4    00:00:00 bash
+20762 pts/7    00:00:00 bash
+25083 pts/7    00:00:00 sh
+25598 pts/7    1-14:51:30 cresc
+26903 pts/7    00:00:00 ps
+Thu May 11 10:29:38 BRT 2000
+  PID TTY          TIME CMD
+ 4800 ?        00:00:17 xterm
+ 4801 pts/4    00:00:00 bash
+20762 pts/7    00:00:00 bash
+25083 pts/7    00:00:00 sh
+25598 pts/7    1-18:50:20 cresc
+27108 pts/7    00:00:00 ps
+Thu May 11 14:36:12 BRT 2000
+  PID TTY          TIME CMD
+ 4800 ?        00:00:17 xterm
+ 4801 pts/4    00:00:00 bash
+20762 pts/7    00:00:00 bash
+25083 pts/7    00:00:00 sh
+25598 pts/7    1-19:42:40 cresc
+27181 pts/7    00:00:00 ps
+Thu May 11 15:29:30 BRT 2000
+  PID TTY          TIME CMD
+ 4800 ?        00:00:17 xterm
+ 4801 pts/4    00:00:00 bash
+20762 pts/7    00:00:00 bash
+25083 pts/7    00:00:00 sh
+25598 pts/7    1-22:24:50 cresc
+27935 pts/7    00:00:00 ps
+Thu May 11 18:17:24 BRT 2000
+  PID TTY          TIME CMD
+ 4800 ?        00:00:17 xterm
+ 4801 pts/4    00:00:00 bash
+20762 pts/7    00:00:00 bash
+25083 pts/7    00:00:00 sh
+25598 pts/7    2-15:49:54 cresc
+28657 pts/7    00:00:00 ps
+Fri May 12 11:51:22 BRT 2000

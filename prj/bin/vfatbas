@@ -1,0 +1,32 @@
+#! /bin/sh
+# ~/prj/src/bin/vfatbas base_entrada 
+
+if [ ${#*} -eq 0 ]
+then
+    set -- -h
+fi
+
+if [ $[${#*} >= 2] == 1 ]
+then
+    set -- -h
+fi
+
+case $1 in
+    -h) echo "
+vfatbas - transform the basis of a W-operator to Ronaldo's basis. 
+Usage: vfatbas <input basis> [<output display>]
+"
+    exit
+    ;;
+esac
+
+if [ -z $1 ]
+then
+  echo "
+Usage: vfatbas <input basis> [<output display>]
+"
+  exit
+fi
+
+~/prj/src/vfatbas/vfatbas $1 
+echo "vfatbas was executed"

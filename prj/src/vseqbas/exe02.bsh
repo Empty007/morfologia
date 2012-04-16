@@ -1,0 +1,84 @@
+rm -f *~
+
+# rm -f cria
+make cria
+
+rm -f exe01.ent
+
+echo "7
+
+0 0 0 0 0 0 0
+0 0 0 0 0 0 0
+0 0 0 0 0 0 0
+0 0 1 1 1 0 0
+0 0 0 0 0 0 0
+0 0 0 0 0 0 0
+0 0 0 0 0 0 0
+
+2
+
+0 0 0 0 0 0 0      0 0 0 0 0 0 0
+0 0 0 0 0 0 0      0 0 0 0 0 0 0
+0 0 0 0 0 0 0      0 0 0 0 0 0 0
+0 0 0 0 1 0 0      0 0 0 1 1 0 0
+0 0 0 0 0 0 0      0 0 0 0 0 0 0
+0 0 0 0 0 0 0      0 0 0 0 0 0 0
+0 0 0 0 0 0 0      0 0 0 0 0 0 0
+
+0 0 0 0 0 0 0      0 0 0 0 0 0 0
+0 0 0 0 0 0 0      0 0 0 0 0 0 0
+0 0 0 0 0 0 0      0 0 0 0 0 0 0
+0 0 0 1 0 0 0      0 0 1 1 0 0 0
+0 0 0 0 0 0 0      0 0 0 0 0 0 0
+0 0 0 0 0 0 0      0 0 0 0 0 0 0
+0 0 0 0 0 0 0      0 0 0 0 0 0 0" > exe01.ent
+
+./cria < exe01.ent > exe01.dsp
+rm -f exe01.ent
+rm -f exe01.dsp
+
+mv base.txt exe01.txt
+
+rm -f exe01.str.ger
+echo "3 3
+      0 0 0
+      0 1 1
+      0 0 0" > exe01.str.ger
+
+~/prj/bin/str_ger exe01.str.ger exe01.str.str
+rm -f exe01.str.ger
+
+~/prj/bin/vdilbas exe01.txt exe01.sai exe01.str.str
+~/prj/bin/vdspbas exe01.sai exe01.dsp 200
+
+# less exe01.dsp
+echo "Base de Entrada"
+cat exe01.dsp
+rm -f exe01.dsp
+mv exe01.sai exe01.txt
+
+# rm -f upper
+make upper
+echo "Upper Bounds"
+./upper exe01.txt exe01.str.str
+
+rm -f exe01.sai
+
+# rm -f lower
+make lower
+echo "Lower Bounds"
+./lower exe01.txt exe01.str.str
+
+# rm -f sol
+echo "Solucoes"
+make sol
+./sol exe01.txt exe01.str.str
+
+rm -f exe01.str.str
+rm -f exe01.txt
+
+rm -f cria
+rm -f upper
+rm -f sol
+rm -f lower
+rm -f exe01.dsp

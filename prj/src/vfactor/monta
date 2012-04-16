@@ -1,0 +1,1 @@
+gcc -I/Users/macbookpro/Documents/prj/src/include vfactor.c ~/Documents/prj/src/obj/libprj.a -o vfactor

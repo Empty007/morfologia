@@ -1,0 +1,4 @@
+rm -f rapa.zip
+zip rapa.zip vgelbas.c crescente.bsh d.txt ed.txt eed.txt deed.txt \
+             crescente-004.bsh crescente-005.bsh
+scp rapa.zip ronaldo@barney:~/ismm2000

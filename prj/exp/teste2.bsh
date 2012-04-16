@@ -1,0 +1,11 @@
+~/prj/bin/vdilbas ~/prj/bas/baseid.txt ~/prj/tmp/sai01.txt ~/prj/str/101000100.str
+
+~/prj/bin/verobas ~/prj/tmp/sai01.txt  ~/prj/tmp/sai02.txt ~/prj/str/101000100.str
+
+~/prj/bin/vdilbas ~/prj/tmp/sai02.txt ~/prj/tmp/sai03.txt ~/prj/str/101000100.str
+
+~/prj/bin/vdspbas ~/prj/tmp/sai03.txt ~/prj/tmp/dsp1.txt 12
+
+cat ~/prj/tmp/dsp1.txt
+
+

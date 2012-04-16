@@ -1,0 +1,13 @@
+BASE 33 10
+WINSPEC    11    11    33
+0 fe1fc1f8 3f07f0 0 
+71e3e3c7 0   8000000 0 
+c78f8f1c 1   20000000 0 
+c7cf9f3c 1   0 0 
+e3f7e7cf 0   0 0 
+e3e7e7cf 0   8000000 0 
+71f3e7cf 0   0 0 
+e3c7c78e 0   10000000 0 
+e3e7cf9e 0   0 0 
+c7efcf9e 1   0 0 
+c7cfcf9e 1   10000000 0 

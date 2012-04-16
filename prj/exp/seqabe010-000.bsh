@@ -1,0 +1,12 @@
+~/prj/bin/verobas ~/prj/bas/baseid.txt ~/prj/tmp/sai01.txt ~/prj/str/000101000.str
+~/prj/bin/verobas ~/prj/bas/baseid.txt ~/prj/tmp/sai02.txt ~/prj/str/000010000.str
+~/prj/bin/vdilbas ~/prj/tmp/sai02.txt  ~/prj/tmp/sai03.txt ~/prj/str/000100000.str
+~/prj/bin/vdspbas ~/prj/tmp/sai02.txt  ~/prj/tmp/sai05.txt  200
+~/prj/bin/vronbas ~/prj/tmp/sai02.txt  ~/prj/tmp/sai06.txt  200
+~/prj/bin/vgerbas ~/prj/tmp/sai06.txt  ~/prj/tmp/sai07.txt  200
+# cat ~/prj/tmp/sai05.txt | less
+# cat ~/prj/tmp/sai06.txt | less
+# ~/prj/bin/vunibas ~/prj/tmp/sai01.txt  ~/prj/tmp/sai03.txt ~/prj/tmp/sai04.txt
+# ~/prj/bin/vdspbas ~/prj/tmp/sai04.txt  ~/prj/tmp/sai05.txt  200
+# cat ~/prj/tmp/sai05.txt | less
+

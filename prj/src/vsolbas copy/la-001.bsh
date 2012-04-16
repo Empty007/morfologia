@@ -1,0 +1,27 @@
+# $\ero_A\inf\nu\dil_B$
+
+~/prj/bin/verobas ~/prj/bas/baseid.txt ~/prj/tmp/sai01.txt ~/prj/str/000111000.str
+
+~/prj/bin/vdilbas ~/prj/bas/baseid.txt  ~/prj/tmp/sai02.txt ~/prj/str/000000100.str
+
+~/prj/bin/vnegbas ~/prj/tmp/sai02.txt  ~/prj/tmp/sai03.txt 
+
+~/prj/bin/vintbas ~/prj/tmp/sai01.txt  ~/prj/tmp/sai03.txt ~/prj/tmp/sai02.txt
+
+cp ~/prj/tmp/sai02.txt la.txt
+
+~/prj/bin/vdilbas ~/prj/tmp/sai02.txt  ~/prj/tmp/sai01.txt ~/prj/str/000111000.str
+
+cp ~/prj/tmp/sai01.txt dil-la.txt
+
+#~/prj/bin/vastbas ~/prj/tmp/sai02.txt  ~/prj/tmp/sai01.txt ~/prj/tmp/sai02.txt
+
+case $1 in
+  -f) ~/prj/bin/vdspbas ~/prj/tmp/sai01.txt ~/prj/tmp/sai03.txt  100
+      cat ~/prj/tmp/sai03.txt | less
+  ;;
+esac
+
+rm -f ~/prj/tmp/sai01.txt ~/prj/tmp/sai02.txt ~/prj/tmp/sai03.txt
+
+

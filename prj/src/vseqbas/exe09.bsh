@@ -1,0 +1,45 @@
+rm -f *~
+rm -f str.ger
+echo "3 3
+ 0 0 0
+ 1 0 1
+ 1 1 0" > str.ger
+~/prj/bin/str_ger str.ger str.str
+rm -f str.ger
+
+echo "3 3
+ 1 0 0
+ 1 0 1
+ 0 1 0" > str.ger
+~/prj/bin/str_ger str.ger str1.str
+rm -f str.ger
+
+~/prj/bin/verobas ~/prj/bas/baseid.txt ero.txt str.str
+~/prj/bin/vdilbas ero.txt dil.txt str.str
+~/prj/bin/verobas dil.txt ero.txt str1.str
+
+~/prj/bin/vdspbas ero.txt dil.dsp 200
+
+# less dil.dsp
+
+make dual
+./dual ero.txt dual.txt
+
+# make upper
+# ./upper dual.txt str1.str
+
+# make lowerc
+# ./lowerc dual.txt str1.str
+
+# make solc
+# ./solc dual.txt str1.str
+
+make cresc
+time ./cresc ero.txt 1
+
+rm -f str.str
+rm -f str1.str
+rm -f dil.txt
+rm -f ero.txt
+rm -f dil.dsp
+rm -f dual.txt

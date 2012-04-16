@@ -1,0 +1,36 @@
+# sequencia de duas aberturas
+# $\dil_A\ero_A\dil_B\ero_B$
+
+~/prj/bin/verobas ~/prj/bas/baseid.txt ~/prj/tmp/sai01.txt ~/prj/str/000111000.str
+~/prj/bin/vdilbas ~/prj/tmp/sai01.txt  ~/prj/tmp/sai02.txt ~/prj/str/000111000.str
+~/prj/bin/verobas ~/prj/tmp/sai02.txt  ~/prj/tmp/sai01.txt ~/prj/str/010111010.str
+
+# geting e compact representation of $\ero_A\dil_B\ero_B$
+#~/prj/bin/vfactor  ~/prj/tmp/sai01.txt ~/prj/tmp/sai07.txt
+#~/prj/bin/vdspfact ~/prj/tmp/sai07.txt ~/prj/tmp/sai08.txt
+#mv ~/prj/tmp/sai08.txt ~/prj/tmp/um_antes.txt
+# cat ~/prj/tmp/um_antes.txt | less
+# enscript -M Letter -2r ~/prj/tmp/um_antes.txt
+#rm  -f ~/prj/tmp/um_antes.txt ~/prj/tmp/sai07.txt
+
+# continuing the basis computation...
+~/prj/bin/vdilbas ~/prj/tmp/sai01.txt  ~/prj/tmp/sai02.txt ~/prj/str/010111010.str
+
+case $1 in
+  -f) # base da sequencia das duas aberturas
+      ~/prj/bin/vdspbas ~/prj/tmp/sai02.txt ~/prj/tmp/sai03.txt  100
+      cat ~/prj/tmp/sai03.txt | less
+      rm -f ~/prj/tmp/sai03.txt
+  ;;
+esac
+
+# geting e compact representation
+
+~/prj/bin/vfactor  ~/prj/tmp/sai02.txt ~/prj/tmp/sai07.txt
+~/prj/bin/vdspfact ~/prj/tmp/sai07.txt ~/prj/tmp/sai08.txt
+# cat ~/prj/tmp/sai08.txt | less
+enscript -M Letter -2r ~/prj/tmp/sai08.txt | lpr -Pcompasso@feijoada
+rm  -f ~/prj/tmp/sai08.txt ~/prj/tmp/sai07.txt
+rm -f ~/prj/tmp/sai01.txt ~/prj/tmp/sai02.txt
+
+

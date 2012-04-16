@@ -1,0 +1,75 @@
+# $\ero_A\inf\nu\dil_B$
+
+rm -f ger_ron.txt ger_nor.txt ger_nnn.txt
+
+echo "5 5
+      1 1 1 0 0
+      1 1 1 1 0
+      1 1 1 1 1
+      0 1 1 1 1
+      0 0 1 1 1" > ger_ron.txt
+
+echo "5 5
+      0 0 0 1 0
+      0 0 0 0 0
+      0 0 0 0 0
+      0 0 0 0 0
+      0 0 0 0 0" > ger_nor.txt
+
+echo "5 5
+      1 1 1 1 0
+      1 1 1 1 1
+      1 1 1 1 1
+      1 1 1 1 1
+      0 1 1 1 1" > ger_nnn.txt
+
+~/prj/bin/str_ger ger_ron.txt ger_ron.str
+~/prj/bin/str_ger ger_nor.txt ger_nor.str
+~/prj/bin/str_ger ger_nnn.txt ger_nnn.str
+
+~/prj/bin/verobas ~/prj/bas/baseid.txt ~/prj/tmp/sai01.txt ger_ron.str
+
+~/prj/bin/vdilbas ~/prj/bas/baseid.txt  ~/prj/tmp/sai02.txt ger_nor.str
+
+~/prj/bin/vnegbas ~/prj/tmp/sai02.txt  ~/prj/tmp/sai03.txt 
+
+~/prj/bin/vintbas ~/prj/tmp/sai01.txt  ~/prj/tmp/sai03.txt ~/prj/tmp/sai04.txt
+
+~/prj/bin/verobas ~/prj/bas/baseid.txt ~/prj/tmp/sai01.txt ger_nnn.str
+
+~/prj/bin/vunibas ~/prj/tmp/sai01.txt  ~/prj/tmp/sai04.txt ~/prj/tmp/sai02.txt
+
+~/prj/bin/vdspbas ~/prj/tmp/sai02.txt ~/prj/tmp/sai12.txt 200
+
+less ~/prj/tmp/sai12.txt
+
+cp ~/prj/tmp/sai02.txt la-002.txt
+
+rm -f ger_ron.txt
+
+echo "3 3
+      0 0 0
+      1 1 1
+      0 0 0" > ger_ron.txt
+
+~/prj/bin/str_ger ger_ron.txt ger_ron.str
+
+~/prj/bin/vdilbas ~/prj/tmp/sai02.txt  ~/prj/tmp/sai01.txt ger_ron.str
+
+cp ~/prj/tmp/sai01.txt dil-la-002.txt
+
+~/prj/bin/vdspbas ~/prj/tmp/sai01.txt ~/prj/tmp/sai12.txt 200
+
+less ~/prj/tmp/sai12.txt
+
+#~/prj/bin/vastbas ~/prj/tmp/sai02.txt  ~/prj/tmp/sai01.txt ~/prj/tmp/sai02.txt
+
+case $1 in
+  -f) ~/prj/bin/vdspbas ~/prj/tmp/sai01.txt ~/prj/tmp/sai03.txt  100
+      cat ~/prj/tmp/sai03.txt | less
+  ;;
+esac
+
+rm -f ~/prj/tmp/sai01.txt ~/prj/tmp/sai02.txt ~/prj/tmp/sai03.txt
+
+

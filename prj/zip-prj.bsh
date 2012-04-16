@@ -1,0 +1,17 @@
+rm -f prj.zip
+
+zip -r prj.zip *
+
+echo 
+echo "file prj.zip generated."
+echo
+
+if [ $HOSTNAME = "pizza.ime.usp.br" ] 
+  then
+    scp prj.zip ronaldo@barney:~/prj
+
+    echo
+    echo "file prj.zip copied to ~/prj at barney."
+    echo
+
+  fi

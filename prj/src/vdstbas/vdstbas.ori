@@ -1,0 +1,27 @@
+#! /bin/sh
+# ~/prj/src/bin/vdstbas base1_entrada  prefix
+
+if [ ${#*} -eq 0 ]
+then
+    set -- -h
+fi
+
+case $1 in
+    -h) echo "
+vdstbas - verify if two basis are equal.
+Usage: vdstbas <input basis 1> <prefix>
+"
+    exit
+    ;;
+esac
+
+if [ -z $2 ]
+then
+  echo "
+Usage: vdstbas <input basis 1> <prefix>
+"
+  exit
+fi
+
+~/prj/src/vdstbas/vdstbas $1 $2
+echo "vdstbas was executed"

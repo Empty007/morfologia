@@ -1,0 +1,5 @@
+rm -f rafa.zip
+zip rafa.zip vgelbas.c vseqbas.c Makefile rafa.bsh elle.c seq.bsh gelbas.c \
+    base.c bex.bsh crescente.c crescente_str.c crescente-00?.bsh \
+    base-ori.c bex-ori.bsh
+scp rafa.zip ronaldo@barney:~/ismm2000

@@ -1,0 +1,23 @@
+# echo "Exemplo 1"
+#  . exe04.bsh
+
+# echo "Exemplo 2"
+# . exe05.bsh
+
+# echo "Exemplo 3"
+# . exe06.bsh
+
+# echo "Exemplo 4"
+# . good03.bsh
+
+# echo "Exemplo 5"
+# . good02.bsh
+
+# echo "Exemplo 6"
+# . good01.bsh
+
+# echo "Exemplo 7"
+# . exe07.bsh
+
+echo "Exemplo 8"
+. exe08.bsh

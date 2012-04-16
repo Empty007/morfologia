@@ -1,0 +1,4 @@
+BASE 34 1
+WINSPEC    13    13    34
+0 7c028000 81f80fc0 1c01f01f 100 0 
+ffffffff 3   0 0 

@@ -1,0 +1,31 @@
+case $1 in
+  -0)
+     ~/prj/bin/verobas ../../bas/baseid.txt sai.txt ger.str
+     ~/prj/bin/str_ger ger.ger sai.tmp
+     ./vlosbas sai.txt sai.tmp
+     rm -f sai.txt sai.tmp
+   ;;
+  -1)
+     ~/prj/bin/verobas ../../bas/baseid.txt sai.txt ../../str/010111010.str 
+     # ~/prj/bin/vdspbas sai.txt sai.tmp 200
+     # less sai.tmp
+     ./vlosbas sai.txt sai.tmp
+     ~/prj/bin/vdspbas sai.tmp sai.txt 200
+     less sai.txt
+     rm -f sai.txt sai.tmp
+   ;;
+   -2)
+     ~/prj/bin/verobas ../../bas/baseid.txt sai.txt ../../str/010111010.str
+     ~/prj/bin/str_ger elem.txt elem.str
+     ~/prj/bin/vdilbas sai.txt sai.tmp elem.str
+     ~/prj/bin/vdspbas sai.tmp sai.txt 200
+     less sai.txt
+     rm -f sai.txt sai.tmp
+   ;;
+  -3)
+     ~/prj/bin/verobas ../../bas/baseid.txt sai.txt ger.ger
+     ~/prj/bin/vdspbas sai.txt sai.tmp 200
+     less sai.tmp
+     # rm -f sai.txt sai.tmp
+   ;;
+esac

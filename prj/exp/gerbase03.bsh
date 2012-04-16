@@ -1,0 +1,8 @@
+~/prj/bin/verobas ~/prj/bas/baseid.txt ~/prj/tmp/sai01.txt ~/prj/str/000111000.str
+~/prj/bin/vdilbas ~/prj/tmp/sai01.txt ~/prj/tmp/final01.txt ~/prj/str/000111000.str
+~/prj/bin/vdspbas ~/prj/tmp/final01.txt ~/prj/tmp/dsp1.txt 100
+less ~/prj/tmp/dsp1.txt
+
+
+
+

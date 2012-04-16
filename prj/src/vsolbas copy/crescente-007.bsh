@@ -1,0 +1,16 @@
+echo "3 3
+      0 0 0
+      1 1 1
+      0 0 0" > linha1.ger
+
+~/prj/bin/str_ger linha1.ger linha1.str
+
+~/prj/bin/vdilbas ~/prj/bas/baseid.txt crescente-007.txt linha1.str
+
+~/prj/bin/vdspbas crescente-007.txt  crescente-007.dsp 200
+
+case $1 in
+  -1) 
+    time ./vlosbas crescente-007.txt linha1.str
+  ;;
+esac

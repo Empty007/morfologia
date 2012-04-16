@@ -1,0 +1,27 @@
+#! /bin/sh
+# ~/prj/bin/vastbas base_entrada  base_saida
+
+if [ ${#*} -eq 0 ]
+then
+    set -- -h
+fi
+
+case $1 in
+    -h) echo "
+vastbas - compute the basis of the dual of a W-operator. 
+Usage: vastbas <input basis> <output basis>
+"
+    exit
+    ;;
+esac
+
+if [ -z $2 ]
+then
+  echo "
+Usage: vastbas <input basis> <output basis>
+"
+  exit
+fi
+
+~/prj/src/vastbas/vastbas $1 $2
+echo "vastbas was executed"

@@ -1,0 +1,27 @@
+#! /bin/sh
+# ~/prj/bin/vastbas base_entrada  base_saida
+
+if [ ${#*} -eq 0 ]
+then
+    set -- -h
+fi
+
+case $1 in
+    -h) echo "
+vsolbas - compute all solution of the factorization equation. 
+Usage: vsolbas <input basis> <output basis>
+"
+    exit
+    ;;
+esac
+
+if [ -z $2 ]
+then
+  echo "
+Usage: vsolbas <input basis> <output basis>
+"
+  exit
+fi
+
+~/prj/src/vsolbas/vsolbas $1 $2
+echo "vsolbas was executed"

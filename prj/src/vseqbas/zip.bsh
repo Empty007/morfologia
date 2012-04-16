@@ -1,0 +1,56 @@
+rm -f vseqbas.zip
+rm -f *~
+
+zip vseqbas.zip Makefile zip.bsh \
+  base.c \
+  cont.awk \
+  crescente.c \
+  crescente_str.c \
+  cria.c \
+  cria.ent \
+  dual.c \
+  elle.c \
+  exe01.bsh \
+  exe02.bsh \
+  exe03.bsh \
+  exe04.bsh \
+  exe05.bsh \
+  exe05.tela \
+  exe06.bsh \
+  exe06-2.bsh \
+  exe06.tela \
+  exe07.bsh \
+  exe08.bsh \
+  exe09.bsh \
+  exe10.bsh \
+  gelbas.c \
+  good01.bsh \
+  good02.bsh \
+  good03.bsh \
+  lower.c \
+  lowerc.c \
+  rap01.bsh \
+  rap02.bsh \
+  rap03.bsh \
+  sol.c \
+  solc.c \
+  upper.c \
+  vezes.c  \
+  cresc.c \
+  exs.bsh \
+  lraha.c \
+  lraha.bsh \
+  base.c \
+  base-ori.c \
+  bex-ori.bsh \
+  bex.bsh tabela.txt \
+  cbase.c \
+  psis.txt exes.bsh
+
+if [ $HOSTNAME = "gnocchi.ime.usp.br" ] || [ $HOSTNAME = "gnocchi" ] ||
+   [ $HOSTNAME = "pizza.ime.usp.br" ] || [ $HOSTNAME = "pizza" ] ||
+   [ $HOSTNAME = "risotto" ]
+  then
+    scp vseqbas.zip ronaldo@barney:~/ismm2000/
+  fi
+

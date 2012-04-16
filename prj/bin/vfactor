@@ -1,0 +1,27 @@
+#! /bin/sh
+# ~/prj/bin/vfactor base_entrada  compact_saida
+
+if [ ${#*} -eq 0 ]
+then
+    set -- -h
+fi
+
+case $1 in
+    -h) echo "
+vfactor - generate the compact representation
+Usage: vfactor <input basis> <output compact>
+"
+    exit
+    ;;
+esac
+
+if [ -z $2 ]
+then
+  echo "
+Usage: vfactor <input basis> <output compact>
+"
+  exit
+fi
+
+~/prj/src/vfactor/vfactor $1 $2
+echo "vfactor was executed"

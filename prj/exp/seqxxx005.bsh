@@ -1,0 +1,27 @@
+# sequencia de dilatacoes e erosoes
+# $\dil_A\ero_A\dil_A\ero_A\ero_B$
+
+~/prj/bin/verobas ~/prj/bas/baseid.txt ~/prj/tmp/sai01.txt ~/prj/str/111111111.str
+~/prj/bin/verobas ~/prj/tmp/sai01.txt  ~/prj/tmp/sai02.txt ~/prj/str/010111010.str
+~/prj/bin/vdilbas ~/prj/tmp/sai02.txt  ~/prj/tmp/sai01.txt ~/prj/str/010111010.str
+~/prj/bin/verobas ~/prj/tmp/sai01.txt  ~/prj/tmp/sai02.txt ~/prj/str/010111010.str
+~/prj/bin/vdilbas ~/prj/tmp/sai02.txt  ~/prj/tmp/sai01.txt ~/prj/str/010111010.str
+~/prj/bin/vdspbas ~/prj/tmp/sai01.txt  ~/prj/tmp/sai03.txt 100
+
+case $1 in
+  -f) ~/prj/bin/vdspbas ~/prj/tmp/sai01.txt ~/prj/tmp/sai03.txt  100
+      cat ~/prj/tmp/sai03.txt | less
+      rm ~/prj/tmp/sai03.txt
+  ;;
+esac
+
+# geting the compact representation
+
+~/prj/bin/vfactor  ~/prj/tmp/sai01.txt ~/prj/tmp/sai07.txt
+~/prj/bin/vdspfact ~/prj/tmp/sai07.txt ~/prj/tmp/sai08.txt
+cat ~/prj/tmp/sai08.txt | less
+rm  ~/prj/tmp/sai08.txt ~/prj/tmp/sai07.txt
+
+rm ~/prj/tmp/sai01.txt ~/prj/tmp/sai02.txt
+
+

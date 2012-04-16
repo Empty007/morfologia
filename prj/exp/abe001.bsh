@@ -1,0 +1,16 @@
+# uma abertura:
+# $\dil_A\ero_A
+
+~/prj/bin/verobas ~/prj/bas/baseid.txt ~/prj/tmp/sai01.txt ~/prj/str/000110000.str
+~/prj/bin/vdilbas ~/prj/tmp/sai01.txt  ~/prj/tmp/sai02.txt ~/prj/str/000110000.str
+
+case $1 in
+    -f)
+        ~/prj/bin/vdspbas ~/prj/tmp/sai02.txt ~/prj/tmp/sai03.txt  100
+        cat ~/prj/tmp/sai03.txt | less
+        rm  -f ~/prj/tmp/sai03.txt
+    ;;
+esac
+
+rm -f ~/prj/tmp/sai01.txt ~/prj/tmp/sai02.txt
+

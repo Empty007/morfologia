@@ -1,0 +1,5 @@
+# b = 010111010
+# ero_b.dspfct.fct.(ero_b.dsp.dil_b)
+a = 010111010
+b = 000111000
+dspfct.fct.dsp.(dil_b.ero_b).dsp.dil_a.ero_a

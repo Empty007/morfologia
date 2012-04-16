@@ -1,0 +1,5 @@
+BASE 23 2
+WINSPEC     9     9    23
+e0f00000 1e0f87c3 0 
+77bef7   80000 
+77ffff   0 

@@ -1,0 +1,30 @@
+echo "5 5
+      0 0 0 0 0
+      0 0 0 0 0 
+      1 0 1 0 0
+      0 0 0 0 0
+      0 0 0 0 0"  > linha1.ger
+
+echo "3 3
+      0 0 0
+      0 1 1
+      0 0 0" > linha2.ger
+
+echo "3 3
+      0 0 0
+      0 0 1
+      0 0 0" > linha3.ger
+
+# less linha1.ger
+
+~/prj/bin/str_ger linha1.ger linha1.str
+~/prj/bin/str_ger linha2.ger linha2.str
+~/prj/bin/str_ger linha3.ger linha3.str
+
+~/prj/bin/vdilbas ~/prj/bas/baseid.txt ~/prj/tmp/sai01.txt linha3.str
+~/prj/bin/vdilbas ~/prj/tmp/sai01.txt  ~/prj/tmp/sai02.txt linha2.str
+~/prj/bin/verobas ~/prj/tmp/sai02.txt  ~/prj/tmp/sai03.txt linha2.str
+~/prj/bin/vdilbas ~/prj/tmp/sai03.txt  ~/prj/tmp/sai04.txt linha1.str
+
+~/prj/bin/vdspbas ~/prj/tmp/sai04.txt ~/prj/tmp/sai12.txt 200
+less ~/prj/tmp/sai12.txt

@@ -1,0 +1,27 @@
+#! /bin/sh
+# ~/prj/src/bin/veqlbas base1_entrada  base2_entrada
+
+if [ ${#*} -eq 0 ]
+then
+    set -- -h
+fi
+
+case $1 in
+    -h) echo "
+veqlbas - verify if two basis are equal.
+Usage: veqlbas <input basis 1> <input basis 2>
+"
+    exit
+    ;;
+esac
+
+if [ -z $2 ]
+then
+  echo "
+Usage: veqlbas <input basis 1> <input basis 2>
+"
+  exit
+fi
+
+~/prj/src/veqlbas/veqlbas $1 $2
+echo "veqlbas was executed"

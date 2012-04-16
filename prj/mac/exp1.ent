@@ -1,0 +1,11 @@
+# /usr/local/khoros2.1/mmachlib-k2.1/mmachlib/objects/library/file_bmp/
+#
+a = 010111010
+b = 000111000
+c = 111111111
+dspfct.fct.dsp.dil_b.ero_b.dil_a.ero_a
+# dsp.(dil_b.ero_b sup dil_a.ero_a)
+# dsp.(dil_b.ero_b sup dil_c.ero_c)
+# dsp.(dil_b.ero_b.dil_c.ero_c)
+# dspfct.fct.neg.ero_b
+# dspfct.fct.dsp.(dsp.(ero_b) sup neg)

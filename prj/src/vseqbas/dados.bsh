@@ -1,0 +1,2 @@
+ps -u ronaldo >> tempo.txt
+date >> tempo.txt

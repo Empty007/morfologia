@@ -1,0 +1,22 @@
+HOME=/home/ronaldo
+rm -f vsolbas.zip
+pushd $HOME
+zip vsolbas.zip prj/src/vsolbas/Makefile \
+                prj/src/vsolbas/vsolbas.c \
+                prj/src/vsolbas/vsolbas.c.bak \
+                prj/src/vsolbas/vsolbas2.c.bak \
+                prj/src/vsolbas/vsolbas.ori \
+                prj/src/vsolbas/zip-solbas.bsh \
+                prj/src/vsolbas/la-001.bsh \
+                prj/src/vsolbas/mu-001.bsh \
+                prj/src/vsolbas/dil-la.txt \
+                prj/src/vsolbas/str_ger.c \
+                prj/src/vsolbas/tlosbas.bsh \
+                prj/src/vsolbas/tlosbas.c \
+mv vsolbas.zip prj/src/vsolbas/
+popd
+
+if [ $HOSTNAME = "pizza.ime.usp.br" ] 
+  then
+    scp vsolbas.zip ronaldo@barney:~/prj-cpy
+  fi

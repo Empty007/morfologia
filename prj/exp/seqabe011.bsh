@@ -1,0 +1,63 @@
+# sequencia de duas aberturas
+# $\dil_B\ero_B\ero_A\dil_A$
+
+# ~/prj/bin/vnegbas ~/prj/bas/baseid.txt  ~/prj/tmp/ni.txt 
+# ~/prj/bin/vdilbas ~/prj/tmp/ni.txt      ~/prj/tmp/dni.txt     ~/prj/str/000011000.str
+# ~/prj/bin/verobas ~/prj/tmp/dni.txt     ~/prj/tmp/edni.txt    ~/prj/str/000011000.str
+# ~/prj/bin/verobas ~/prj/tmp/edni.txt    ~/prj/tmp/eedni.txt   ~/prj/str/000111000.str
+# ~/prj/bin/vdilbas ~/prj/tmp/eedni.txt   ~/prj/tmp/deedni.txt  ~/prj/str/000111000.str
+# ~/prj/bin/vnegbas ~/prj/tmp/deedni.txt  ~/prj/tmp/ndeedni.txt 
+# ~/prj/bin/vdspbas ~/prj/tmp/ndeedni.txt ~/prj/tmp/ndeedni.dsp 200
+# echo "ndeedni-01.dsp" >> ~/prj/tmp/ndeedni-01.dsp
+# cat ~/prj/tmp/ndeedni-01.dsp | less
+
+~/prj/bin/vdilbas ~/prj/bas/baseid.txt ~/prj/tmp/d.txt ~/prj/str/000011000.str
+~/prj/bin/verobas ~/prj/tmp/d.txt  ~/prj/tmp/ed.txt ~/prj/str/000011000.str
+~/prj/bin/verobas ~/prj/tmp/ed.txt  ~/prj/tmp/eed.txt ~/prj/str/000111000.str
+~/prj/bin/vdilbas ~/prj/tmp/eed.txt  ~/prj/tmp/deed.txt ~/prj/str/000111000.str
+
+# ~/prj/bin/verobas ~/prj/tmp/deed.txt  ~/prj/tmp/edeed.txt ~/prj/str/000111000.str
+# ~/prj/bin/vdspbas ~/prj/tmp/edeed.txt ~/prj/tmp/edeed.dsp  200
+# echo "edeed.dsp" >> ~/prj/tmp/edeed.dsp
+# cat ~/prj/tmp/edeed.dsp | less
+
+# imprimindo base deed.txt
+# ~/prj/bin/vdspbas ~/prj/tmp/deed.txt ~/prj/tmp/deed.dsp  200
+# cat ~/prj/tmp/deed.dsp | less
+# enscript -M Letter -2r ~/prj/tmp/deed.dsp | lpr # -Pcompasso@feijoada
+
+~/prj/bin/vronbas ~/prj/tmp/deed.txt ~/prj/tmp/deed-ron.txt
+~/prj/bin/vgerbas ~/prj/tmp/deed1-ron.txt ~/prj/tmp/eed-ron.txt
+
+~/prj/bin/vnegbas ~/prj/tmp/eed-ron.txt ~/prj/tmp/need-ron.txt
+~/prj/bin/vdspbas ~/prj/tmp/need-ron.txt ~/prj/tmp/need-ron.dsp 200
+echo "need-ron.dsp" >> ~/prj/tmp/need-ron.dsp
+less ~/prj/tmp/need-ron.dsp 
+
+~/prj/bin/vnegbas ~/prj/tmp/eed.txt ~/prj/tmp/need.txt
+~/prj/bin/vdspbas ~/prj/tmp/need.txt ~/prj/tmp/need.dsp 200
+echo "need.dsp" >> ~/prj/tmp/need.dsp
+less ~/prj/tmp/need.dsp 
+
+
+# imprimindo base eed.txt
+~/prj/bin/vdspbas ~/prj/tmp/eed.txt ~/prj/tmp/eed.dsp  200
+echo "eed.dsp" >> ~/prj/tmp/eed.dsp
+less ~/prj/tmp/eed.dsp
+# enscript -M Letter -2r ~/prj/tmp/eed.dsp | lpr # -Pcompasso #@feijoada
+
+# geting e compact representation
+
+# compact representation of original basis
+~/prj/bin/vfactor  ~/prj/tmp/deed.txt ~/prj/tmp/fdeed.txt
+~/prj/bin/vdspfact ~/prj/tmp/fdeed.txt ~/prj/tmp/fdeed.dsp
+# cat ~/prj/tmp/fdeed.dsp | less
+# enscript -M Letter -2r ~/prj/tmp/fdeed.dsp | lpr # -Pcompasso #@feijoada
+
+# compact representation of mounted basis
+# ~/prj/bin/vfactor  ~/prj/tmp/need01.txt ~/prj/tmp/fneed01.txt
+# ~/prj/bin/vdspfact ~/prj/tmp/fneed01.txt ~/prj/tmp/fneed01-02.dsp
+# enscript -M Letter -2r ~/prj/tmp/fneed01-02.dsp | lpr -Pcompasso@feijoada
+
+
+

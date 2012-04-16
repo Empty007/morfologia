@@ -1,0 +1,57 @@
+gcc -c -I/Users/macbookpro/Documents/prj/src/include ./utils.c
+mv utils.o ~/prj/src/obj
+gcc -c -I/Users/macbookpro/Documents/prj/src/include ./lvrot.c
+mv lvrot.o ~/prj/src/obj
+gcc -c -I/Users/macbookpro/Documents/prj/src/include ./negation.c
+mv negation.o ~/prj/src/obj
+gcc -c -I/Users/macbookpro/Documents/prj/src/include ./fullpath.c
+mv fullpath.o ~/prj/src/obj
+gcc -c -I/Users/macbookpro/Documents/prj/src/include ./tools.c
+mv tools.o ~/prj/src/obj
+gcc -c -I/Users/macbookpro/Documents/prj/src/include ./cr_image.c
+mv cr_image.o ~/prj/src/obj
+gcc -c -I/Users/macbookpro/Documents/prj/src/include ./pac_win.c
+mv pac_win.o ~/prj/src/obj
+gcc -c -I/Users/macbookpro/Documents/prj/src/include ./pac_bas.c
+mv pac_bas.o ~/prj/src/obj
+gcc -c -I/Users/macbookpro/Documents/prj/src/include ./desc_bas.c
+mv desc_bas.o ~/prj/src/obj
+gcc -c -I/Users/macbookpro/Documents/prj/src/include ./desc_win.c
+mv desc_win.o ~/prj/src/obj
+gcc -c -I/Users/macbookpro/Documents/prj/src/include ./dilate_b.c
+mv dilate_b.o ~/prj/src/obj
+gcc -c -I/Users/macbookpro/Documents/prj/src/include ./keywords.c
+mv keywords.o ~/prj/src/obj
+gcc -c -I/Users/macbookpro/Documents/prj/src/include ./machtype.c
+mv machtype.o ~/prj/src/obj
+gcc -c -I/Users/macbookpro/Documents/prj/src/include ./putenv.c
+mv putenv.o ~/prj/src/obj
+gcc -c -I/Users/macbookpro/Documents/prj/src/include ./machorde.c
+mv machorde.o ~/prj/src/obj
+gcc -c -I/Users/macbookpro/Documents/prj/src/include ./strings.c
+mv strings.o ~/prj/src/obj
+gcc -c -I/Users/macbookpro/Documents/prj/src/include ./imagesize.c
+mv imagesize.o ~/prj/src/obj
+gcc -c -I/Users/macbookpro/Documents/prj/src/include ./pac_xpl.c
+mv pac_xpl.o ~/prj/src/obj
+# gcc -c -I/Users/macbookpro/Documents/prj/src/include ./pac_cfg.c
+# mv pac_cfg.o ~/prj/src/obj
+gcc -c -I/Users/macbookpro/Documents/prj/src/include ./pac_tool.c
+mv pac_tool.o ~/prj/src/obj
+gcc -c -I/Users/macbookpro/Documents/prj/src/include ./erosion_.c
+mv erosion_.o ~/prj/src/obj
+gcc -c -I/Users/macbookpro/Documents/prj/src/include ./intersec.c
+mv intersec.o ~/prj/src/obj
+gcc -c -I/Users/macbookpro/Documents/prj/src/include ./fat.c
+mv fat.o ~/prj/src/obj
+gcc -c -I/Users/macbookpro/Documents/prj/src/include ./dsp.c
+mv dsp.o ~/prj/src/obj
+gcc -c -I/Users/macbookpro/Documents/prj/src/include ./union_ba.c
+mv union_ba.o ~/prj/src/obj
+gcc -c -I/Users/macbookpro/Documents/prj/src/include ./toolboxes.c
+mv toolboxes.o ~/prj/src/obj
+
+cd ~/prj/src/obj
+ar r libprj.a *.o
+rm *.o
+

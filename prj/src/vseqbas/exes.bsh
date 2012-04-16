@@ -1,0 +1,24 @@
+echo "Exemplo 1"
+echo "Exemplo 1" >> exemplos.txt
+. exe04.bsh >> exemplos.txt
+
+echo "Exemplo 2"
+echo "Exemplo 2" >> exemplos.txt
+. good02.bsh >> exemplos.txt
+
+echo "Exemplo 3"
+echo "Exemplo 3" >> exemplos.txt
+. exe05.bsh >> exemplos.txt
+
+echo "Exemplo 4"
+echo "Exemplo 4" >> exemplos.txt
+. exe06.bsh >> exemplos.txt
+
+echo "Exemplo 5"
+echo "Exemplo 5" >> exemplos.txt
+. good01.bsh >> exemplos.txt
+
+echo "Exemplo 6"
+echo "Exemplo 6" >> exemplos.txt 
+. good03.bsh >> exemplos.txt
+

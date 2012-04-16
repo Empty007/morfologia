@@ -1,0 +1,10 @@
+HOME=/home/ronaldo
+rm -f vastbas.zip
+pushd $HOME
+zip vastbas.zip $HOME/prj/src/vastbas/Makefile \
+                $HOME/prj/src/vastbas/vastbas.c \
+                $HOME/prj/src/vastbas/vastbas.ori \
+                $HOME/prj/src/vastbas/zip-astbas.bsh 
+popd
+mv $HOME/vastbas.zip .
+scp vastbas.zip ronaldo@barney:~/prj-cpy

@@ -1,0 +1,52 @@
+rm -f *~
+
+# rm -f cria
+make -s cria
+
+rm -f exe01.ent
+
+echo "7
+
+0 0 0 0 0 0 0
+0 0 0 0 0 0 0
+0 0 0 0 0 0 0
+0 1 1 1 1 1 0
+0 0 0 0 0 0 0
+0 0 0 0 0 0 0
+0 0 0 0 0 0 0
+
+1
+
+0 0 0 0 0 0 0      0 0 0 0 0 0 0
+0 0 0 0 0 0 0      0 0 0 0 0 0 0
+0 0 0 0 0 0 0      0 0 0 0 0 0 0
+0 0 1 0 0 0 0      0 1 1 1 0 1 0
+0 0 0 0 0 0 0      0 0 0 0 0 0 0
+0 0 0 0 0 0 0      0 0 0 0 0 0 0
+0 0 0 0 0 0 0      0 0 0 0 0 0 0" > exe01.ent
+
+./cria < exe01.ent > exe01.dsp
+
+mv base.txt exe01.txt
+
+rm -f str.ger
+echo "3 3
+      0 0 0
+      0 1 1
+      0 0 0" > str.ger
+
+~/prj/bin/str_ger str.ger str.str
+
+make lraha
+rm -f lraha.txt
+./lraha exe01.txt str.str
+
+# make lower
+# ./lower exe01.txt str.str
+
+rm -f lraha.txt
+rm -f str.ger
+rm -f str.str
+rm -f exe01.txt
+rm -f exe01.dsp
+

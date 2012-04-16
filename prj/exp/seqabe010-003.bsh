@@ -1,0 +1,30 @@
+# sequencia de duas aberturas
+# $\dil_A\ero_A\ero_A\dil_A$
+
+~/prj/bin/vdilbas ~/prj/bas/baseid.txt ~/prj/tmp/d.txt ~/prj/str/000111000.str
+~/prj/bin/verobas ~/prj/tmp/d.txt  ~/prj/tmp/ed.txt ~/prj/str/000111000.str
+~/prj/bin/verobas ~/prj/tmp/ed.txt  ~/prj/tmp/eed.txt ~/prj/str/000111000.str
+~/prj/bin/vdilbas ~/prj/tmp/eed.txt  ~/prj/tmp/deed.txt ~/prj/str/000111000.str
+
+~/prj/bin/vronbas  ~/prj/tmp/eed.txt ~/prj/tmp/ron01.txt
+
+# a partir de ron01.txt construir na mao ron02.txt
+
+# gerando base montada ...
+~/prj/bin/vgerbas  ~/prj/tmp/ron02.txt  ~/prj/tmp/eed01.txt
+
+# distribuindo a base montada
+~/prj/bin/vdstbas ~/prj/tmp/eed01.txt ~/prj/tmp/dst010
+
+~/prj/bin/vdspbas ~/prj/tmp/dst010-000.txt ~/prj/tmp/dsp.txt 200
+
+# montando a base eed01.txt por unioes
+
+~/prj/bin/vunibas ~/prj/tmp/dst010-000.txt ~/prj/tmp/dst010-001.txt ~/prj/tmp/uni-000.txt 
+~/prj/bin/vunibas ~/prj/tmp/dst010-002.txt ~/prj/tmp/uni-000.txt ~/prj/tmp/uni-001.txt 
+~/prj/bin/vunibas ~/prj/tmp/dst010-003.txt ~/prj/tmp/uni-001.txt ~/prj/tmp/uni-002.txt 
+~/prj/bin/vunibas ~/prj/tmp/dst010-004.txt ~/prj/tmp/uni-002.txt ~/prj/tmp/uni-003.txt 
+
+~/prj/bin/veqlbas ~/prj/tmp/uni-003.txt ~/prj/tmp/eed01.txt
+
+~/prj/bin/vdspbas ~/prj/tmp/uni-003.txt ~/prj/tmp/dsp.txt 200

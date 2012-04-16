@@ -1,0 +1,27 @@
+#! /bin/sh
+# ~/prj/src/bin/vronbas base_entrada  display quantidade
+
+if [ ${#*} -eq 0 ]
+then
+    set -- -h
+fi
+
+case $1 in
+    -h) echo "
+vronbas - transform the basis of a W-operator to Ronaldo's basis. 
+Usage: vronbas <input basis> <output display>
+"
+    exit
+    ;;
+esac
+
+if [ -z $2 ]
+then
+  echo "
+Usage: vronbas <input basis> <output display>
+"
+  exit
+fi
+
+~/prj/src/vronbas/vronbas $1 $2
+echo "vronbas was executed"

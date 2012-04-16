@@ -1,0 +1,36 @@
+Exemplo 1
+verobas was executed
+vdilbas was executed
+vdspbas was executed
+Complexidade = 111
+Exemplo 2
+verobas was executed
+vdilbas was executed
+vdspbas was executed
+Complexidade = 111
+Exemplo 3
+verobas was executed
+vdilbas was executed
+verobas was executed
+vdspbas was executed
+Complexidade = 319
+Exemplo 4
+verobas was executed
+vdilbas was executed
+verobas was executed
+vdilbas was executed
+vdspbas was executed
+Complexidade = 431
+Exemplo 5
+vdilbas was executed
+verobas was executed
+vdilbas was executed
+vdspbas was executed
+Complexidade = 187
+Exemplo 6
+verobas was executed
+vdilbas was executed
+vdspbas was executed
+Complexidade = 143
+
+

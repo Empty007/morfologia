@@ -1,0 +1,2 @@
+gcc -I/Users/macbookpro/Documents/prj/src/include vdspfact.c ~/Documents/prj/src/obj/libprj.a -o vdspfact
+

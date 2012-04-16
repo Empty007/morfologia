@@ -1,0 +1,20 @@
+~/prj/bin/str_ger ger.ger ger.str
+
+case $1 in
+  -1) 
+    time ./vlosbas dil-la.txt ger.str Z-la-001.txt
+    mv X.txt X-la-001.txt
+  ;;
+  -2)
+    time ./vlosbas dil-la-002.txt ger.str Z-la-002.txt
+    mv X.txt X-la-002.txt
+  ;;
+  -3)
+    time ./vlosbas dil-la-003.txt ger.str Z-la-003.txt
+    mv X.txt X-la-003.txt
+  ;;
+  -4)
+    time ./vlosbas dil-la-004.txt ger.str Z-la-004.txt
+    mv X.txt X-la-004.txt
+  ;;
+esac

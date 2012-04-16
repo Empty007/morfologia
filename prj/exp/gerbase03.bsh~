@@ -1,0 +1,29 @@
+~/prj/bin/verobas ~/prj/bas/baseid.txt ~/prj/tmp/sai01.txt ~/prj/str/000011000.str
+~/prj/bin/verobas ~/prj/bas/baseid.txt ~/prj/tmp/sai02.txt ~/prj/str/000111000.str
+~/prj/bin/vunibas ~/prj/tmp/sai01.txt  ~/prj/tmp/sai02.txt ~/prj/tmp/sai03.txt 
+
+~/prj/bin/verobas ~/prj/bas/baseid.txt ~/prj/tmp/sai001.txt ~/prj/str/000001000.str
+~/prj/bin/verobas ~/prj/bas/baseid.txt ~/prj/tmp/sai010.txt ~/prj/str/000010000.str
+~/prj/bin/verobas ~/prj/bas/baseid.txt ~/prj/tmp/sai100.txt ~/prj/str/000100000.str
+~/prj/bin/verobas ~/prj/bas/baseid.txt ~/prj/tmp/sai111.txt ~/prj/str/000111000.str
+
+~/prj/bin/vunibas ~/prj/tmp/sai111.txt  ~/prj/tmp/sai010.txt ~/prj/tmp/sai05.txt 
+~/prj/bin/vunibas ~/prj/tmp/sai111.txt  ~/prj/tmp/sai100.txt ~/prj/tmp/sai06.txt 
+~/prj/bin/vunibas ~/prj/tmp/sai06.txt  ~/prj/tmp/sai05.txt ~/prj/tmp/sai07.txt 
+~/prj/bin/vnegbas ~/prj/tmp/sai07.txt  ~/prj/tmp/sai08.txt 
+
+~/prj/bin/vunibas ~/prj/tmp/sai08.txt  ~/prj/tmp/sai03.txt ~/prj/tmp/sai09.txt 
+
+~/prj/bin/vdspbas ~/prj/tmp/sai09.txt ~/prj/tmp/dsp1.txt 100
+less ~/prj/tmp/dsp1.txt
+
+~/prj/bin/vdilbas  ~/prj/tmp/sai09.txt ~/prj/tmp/final01.txt ~/prj/str/000110000.str
+~/prj/bin/vdspbas ~/prj/tmp/final01.txt ~/prj/tmp/dsp1.txt 100
+less ~/prj/tmp/dsp1.txt
+
+~/prj/bin/verobas  ~/prj/tmp/sai09.txt ~/prj/tmp/final02.txt ~/prj/str/000110000.str
+~/prj/bin/vdspbas ~/prj/tmp/final02.txt ~/prj/tmp/dsp1.txt 100
+less ~/prj/tmp/dsp1.txt
+
+
+

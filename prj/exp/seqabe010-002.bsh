@@ -1,0 +1,56 @@
+# sequencia de duas aberturas
+# $\dil_A\ero_A\ero_A\dil_A$
+
+~/prj/bin/vdilbas ~/prj/bas/baseid.txt ~/prj/tmp/d.txt ~/prj/str/000111000.str
+~/prj/bin/verobas ~/prj/tmp/d.txt  ~/prj/tmp/ed.txt ~/prj/str/000111000.str
+~/prj/bin/verobas ~/prj/tmp/ed.txt  ~/prj/tmp/eed.txt ~/prj/str/000111000.str
+~/prj/bin/vdilbas ~/prj/tmp/eed.txt  ~/prj/tmp/deed.txt ~/prj/str/000111000.str
+
+# imprimindo base deed.txt
+~/prj/bin/vdspbas ~/prj/tmp/deed.txt ~/prj/tmp/deed-02.dsp  200
+# enscript -M Letter -2r ~/prj/tmp/deed-02.dsp | lpr -Pcompasso@feijoada
+
+# imprimindo base eed.txt
+~/prj/bin/vdspbas ~/prj/tmp/eed.txt ~/prj/tmp/eed-02.dsp  200
+# enscript -M Letter -2r ~/prj/tmp/eed-02.dsp | lpr -Pcompasso@feijoada
+
+~/prj/bin/vronbas  ~/prj/tmp/eed.txt ~/prj/tmp/ron01.txt
+
+# a partir de ron01.txt construir na mao ron03.txt
+
+# gerando base montada ...
+~/prj/bin/vgerbas  ~/prj/tmp/ron03.txt  ~/prj/tmp/eed01.txt
+
+# imprimindo a base montada
+~/prj/bin/vdspbas ~/prj/tmp/eed01.txt ~/prj/tmp/eed01-02.dsp  200
+# enscript -M Letter -2r ~/prj/tmp/eed01-02.dsp | lpr -Pcompasso@feijoada
+
+# dilatando a base montada e imprimindo ...
+~/prj/bin/vdilbas ~/prj/tmp/eed01.txt  ~/prj/tmp/deed01.txt ~/prj/str/000111000.str
+~/prj/bin/vdspbas ~/prj/tmp/deed01.txt ~/prj/tmp/deed01-02.dsp  200
+# enscript -M Letter -2r ~/prj/tmp/deed01-02.dsp | lpr -Pcompasso@feijoada
+
+# negando a base montada
+~/prj/bin/vnegbas ~/prj/tmp/eed01.txt ~/prj/tmp/need01.txt
+~/prj/bin/vdspbas ~/prj/tmp/need01.txt ~/prj/tmp/need01-02.dsp  200
+# enscript -M Letter -2r ~/prj/tmp/need01-02.dsp | lpr -Pcompasso@feijoada
+
+# negando a base original
+~/prj/bin/vnegbas ~/prj/tmp/eed.txt ~/prj/tmp/need.txt
+~/prj/bin/vdspbas ~/prj/tmp/need.txt ~/prj/tmp/need-02.dsp  200
+# enscript -M Letter -2r ~/prj/tmp/need-02.dsp | lpr -Pcompasso@feijoada
+
+# geting e compact representation
+
+# compact representation of original basis
+~/prj/bin/vfactor  ~/prj/tmp/need.txt ~/prj/tmp/fneed.txt
+~/prj/bin/vdspfact ~/prj/tmp/fneed.txt ~/prj/tmp/fneed-02.dsp
+# enscript -M Letter -2r ~/prj/tmp/fneed-02.dsp | lpr -Pcompasso@feijoada
+
+# compact representation of mounted basis
+~/prj/bin/vfactor  ~/prj/tmp/need01.txt ~/prj/tmp/fneed01.txt
+~/prj/bin/vdspfact ~/prj/tmp/fneed01.txt ~/prj/tmp/fneed01-02.dsp
+# enscript -M Letter -2r ~/prj/tmp/fneed01-02.dsp | lpr -Pcompasso@feijoada
+
+
+

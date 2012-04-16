@@ -1,0 +1,1 @@
+gcc -I/Users/macbookpro/Documents/prj/src/include vnegbas.c ~/Documents/prj/src/obj/libprj.a -o vnegbas

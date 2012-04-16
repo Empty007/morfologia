@@ -1,0 +1,27 @@
+#! /bin/sh
+# ~/prj/src/bin/vdspfact compact_entrada  display
+
+if [ ${#*} -eq 0 ]
+then
+    set -- -h
+fi
+
+case $1 in
+    -h) echo "
+vdspfact - display the compact representation
+Usage: vdspfact <input compact> <output display>
+"
+    exit
+    ;;
+esac
+
+if [ -z $2 ]
+then
+  echo "
+Usage: vdspfact <input compact> <output display>
+"
+  exit
+fi
+
+~/prj/src/vdspfact/vdspfact $1 $2
+echo "vdspfact was executed"

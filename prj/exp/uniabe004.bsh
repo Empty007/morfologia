@@ -1,0 +1,40 @@
+# uniao de duas aberturas:
+# $\dil_A\ero_A\sup\dil_B\ero_B$ : $A\subset B$
+
+~/prj/bin/verobas ~/prj/bas/baseid.txt ~/prj/tmp/sai01.txt ~/prj/str/111111111.str
+~/prj/bin/vdilbas ~/prj/tmp/sai01.txt  ~/prj/tmp/sai02.txt ~/prj/str/111111111.str
+
+~/prj/bin/verobas ~/prj/bas/baseid.txt ~/prj/tmp/sai01.txt ~/prj/str/010111010.str
+~/prj/bin/vdilbas ~/prj/tmp/sai01.txt  ~/prj/tmp/sai04.txt ~/prj/str/010111010.str
+
+case $1 in
+    -s)
+        ~/prj/bin/vdspbas ~/prj/tmp/sai02.txt ~/prj/tmp/sai03.txt  100
+        cat ~/prj/tmp/sai03.txt | less
+        rm ~/prj/tmp/sai03.txt
+        ~/prj/bin/vdspbas ~/prj/tmp/sai04.txt ~/prj/tmp/sai05.txt  100
+        cat ~/prj/tmp/sai05.txt | less
+        rm ~/prj/tmp/sai05.txt
+    ;;
+esac
+
+~/prj/bin/vunibas ~/prj/tmp/sai02.txt ~/prj/tmp/sai04.txt  ~/prj/tmp/sai06.txt
+rm ~/prj/tmp/sai01.txt ~/prj/tmp/sai02.txt ~/prj/tmp/sai04.txt
+
+case $1 in
+    -f)
+        ~/prj/bin/vdspbas ~/prj/tmp/sai06.txt ~/prj/tmp/sai07.txt  100
+        cat ~/prj/tmp/sai07.txt | less
+        rm  ~/prj/tmp/sai07.txt
+    ;;
+esac
+
+# we obtain the compact representation
+
+~/prj/bin/vfactor  ~/prj/tmp/sai06.txt ~/prj/tmp/sai07.txt
+~/prj/bin/vdspfact ~/prj/tmp/sai07.txt ~/prj/tmp/sai08.txt
+cat ~/prj/tmp/sai08.txt | less
+rm  ~/prj/tmp/sai08.txt ~/prj/tmp/sai07.txt
+
+rm ~/prj/tmp/sai06.txt
+
