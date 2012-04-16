@@ -1,0 +1,16 @@
+~/prj/bin/str_ger ger.ger ger.str
+
+case $1 in
+  -1) 
+    time ./vseqbas dil-la.txt ger.str
+  ;;
+  -2)
+    time ./vseqbas dil-la-002.txt ger.str
+  ;;
+  -3)
+    time ./vseqbas dil-la-003.txt ger.str
+  ;;
+  -4)
+    time ./vseqbas dil-la-004.txt ger.str
+  ;;
+esac

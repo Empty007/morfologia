@@ -1,0 +1,217 @@
+# include <stdio.h>
+# include <malloc.h>
+# include "pac_win.h"
+# include "pac_bas.h"
+# include "fat.h"
+# include "pac_def.h"
+
+# define MAX_INTERVALOS 200
+
+extern int mask[NB];
+
+struct win_ron {
+  struct elem * win;
+  int h,w,nv;
+};
+
+typedef struct win_ron WIN_RON;
+
+struct inter_ron {
+  struct elem *A;
+  struct elem *Bc;
+  struct inter_ron * next;
+};
+
+typedef struct inter_ron L_INTER_RON;
+
+struct base_ron {
+  INTER_RON * base;
+  int ni;
+  WIN_RON * win;
+};
+
+typedef struct base_ron BASE_RON;
+
+int data_matrix (int * data, int h, int w, struct elem * * lista) {
+  /* transforma a janela da nina para a minha janela */
+  int i, j, nshifts, mask, section, dado;
+  struct elem * aux;
+
+  *lista = NULL;
+  for(i=0; i<h; i++) {
+    for(j=0; j<w; j++) {
+      nshifts = ((i*w)+j)%NB ;
+      mask = 1<<nshifts ;
+      section = ((i*w)+j)/NB ;
+      dado = data[section] ;
+      if ((dado & mask) == mask) {
+        aux       = (struct elem *) node_allocation (sizeof (struct elem));
+        aux->row  = i;  
+        aux->col  = j; 
+        aux->next = NULL;
+        if (*lista)
+          (*lista)->next = aux;
+        else *lista = aux;
+      }
+    }
+  }
+
+  return 1;
+}
+
+int monta_win_ron (win_struc *win, ELEMENTO * window) {
+  struct elem * aux;
+  int nshifts, block;
+  int  mask ;
+  int  i, j, section ;
+  int  data ;
+
+  window->h  = win->hsize;
+  window->w  = win->wsize;
+  window->nv = win->size;
+
+  data_matrix (win->data, win->hsize, win->wsize, &window->win);
+  return 1;
+}
+
+int monta_bas_ron (trv_struc * basis_in, BASE * basis_out) {
+  char back_car, left_car, right_car;
+  static char strA[2500], strB[2500];
+  int ind, * winidx, i;
+
+  struct elem *A, *Bc;
+  int sizeA, sizeBc;
+
+  basis_out = NULL;
+
+  set_cars (" ", " ", " ", &back_car, &left_car, &right_car);
+  basis_out->ni = basis_in->total;
+  basis_out->nv = basis_in->nv;
+  basis_out->h  = basis_in->win.hsize;
+  basis_out->w  = basis_in->win.wsize;
+
+  init_str (strA, 2500, &(basis_in->win), back_car, left_car, right_car);
+  init_str (strB, 2500, &(basis_in->win), back_car, left_car, right_car);
+  win_index (basis_in->win, &winidx);
+
+  for (i=0; i<basis_out->ni; i++) {
+    ind = basis_in->ind[i];
+    /* assembly matrix A */
+    cfg2str (&basis_in->A[ind], basis_in->nv, winidx, basis_in->win.hsize,
+	    basis_in->win.wsize, strA, 2500); 
+    A = assembly_matrix (strA, basis_in->win.hsize, basis_in->win.wsize,
+                         &sizeA);  
+    /* assembly matrix Bc */
+    cfg2str (&basis_in->B[ind], basis_in->nv, winidx, basis_in->win.hsize,
+	    basis_in->win.wsize, strB, 2500) ;
+    Bc = assembly_matrix (strB, basis_in->win.hsize, basis_in->win.wsize, 
+                          &sizeBc); 
+    /* create interval [A, Bc] */
+    inter[i] = create_interval (A, Bc);
+  }
+
+  return 1;
+}
+
+int monta_intervalo_padrao (trv_struc * basis1) {
+  struct interval * inter[MAX_INTERVALOS], *apt_inter, *apt_inter_aux;
+  struct elem *A, *Bc, *W;
+  int sizeA, sizeBc;
+  int n_intervals, i;
+  char back_car, left_car, right_car;
+  int st;
+  static char strA[2500], strB[2500];
+  int ind, * winidx;
+
+  st = set_cars (" ", " ", " ", &back_car, &left_car, &right_car);
+  if (st == 0) {
+    fprintf (stderr, "intervalo_padrao : set_cars () failed\n");
+    return 0;
+  }
+
+  n_intervals = basis1->total;
+  if (n_intervals >= MAX_INTERVALOS) {
+    fprintf (stderr, "intervalo_padrao : aumentar vetor () failed\n");
+    return 0;
+  }
+
+  st = init_str (strA, 2500, &(basis1->win), back_car, left_car, right_car);
+  if (st == 0) {
+    fprintf (stderr, "intervalo_padrao : init_str: A () failed\n");
+    return 0;
+  }
+
+  st = init_str (strB, 2500, &(basis1->win), back_car, left_car, right_car);
+  if (st == 0) {
+    fprintf (stderr, "intervalo_padrao : init_str: B () failed\n");
+    return 0;
+  }
+
+  st = win_index (&basis1->win, &winidx);
+  if (st == 0) {
+    fprintf (stderr, "intervalo_padrao : win_index () failed\n");
+    return 0;
+  }
+
+  for (i=0; i<n_intervals; i++) {
+    ind = basis1->ind[i];
+    /* assembly matrix A */
+    cfg2str (&basis1->A[ind], basis1->nv, winidx, basis1->win.hsize,
+	    basis1->win.wsize, strA, 2500); 
+    A = assembly_matrix (strA, basis1->win.hsize, basis1->win.wsize, &sizeA);
+    // printf ("%d - ", sizeA);
+    /* assembly matrix Bc */
+    cfg2str (&basis1->B[ind], basis1->nv, winidx, basis1->win.hsize,
+	    basis1->win.wsize, strB, 2500) ;
+    Bc = assembly_matrix (strB, basis1->win.hsize, basis1->win.wsize, &sizeBc);
+    // printf ("%d\n", sizeBc);
+    /* create interval [A, Bc] */
+    inter[i] = create_interval (A, Bc);
+  }
+
+  for (i=0; i<n_intervals; i++) {
+    struct elem * apt, * aux;
+    for (apt = inter[i]->A; apt;) {
+      aux = apt;
+      apt = apt->next;
+      free (aux);
+    }
+    for (apt = inter[i]->Bc; apt;) {
+      aux = apt;
+      apt = apt->next;
+      free (aux);
+    }
+    free (inter[i]);
+  }
+  free (winidx);
+  return 1;
+}
+
+int lvsolbas (char * fname1, char * fname2) {
+  trv_struc basis1, basis2, basis3;
+  int       st;
+
+  reset_basis (&basis1);
+  st = read_itrv (fname1, &basis1);
+  if (st == 0) {
+    fprintf (stderr, "lvsolbas : read_itrv() failed\n");
+    free_itrv (&basis1);
+    return 0;
+  }
+
+  monta_intervalo_padrao (&basis1);
+
+  free_itrv (&basis1);
+  return 1;
+}
+
+int main (int argc, char * * argv) {
+
+
+    if (!lvsolbas(argv[1], argv[2])) {
+       fprintf(stderr, "vlsol : lvsolbas() failed\n") ;
+       return 1;
+    }
+
+    return 0;
+}

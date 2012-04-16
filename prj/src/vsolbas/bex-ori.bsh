@@ -1,0 +1,14 @@
+make base-ori
+./base
+~/prj/bin/strger 000111000.str
+~/prj/bin/vdilbas base.txt ron.txt 000111000.str
+~/prj/bin/vdspbas ron.txt dil.txt 200
+
+# enscript dil.txt | lpr -Pcompasso@feijoada
+
+time ./vlosbas ron.txt 000111000.str
+
+rm -f base.txt
+rm -f 000111000.str
+rm -f ron.txt
+rm -f dil.txt

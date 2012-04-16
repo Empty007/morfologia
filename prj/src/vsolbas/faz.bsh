@@ -1,0 +1,9 @@
+# ~/prj/bin/str_ger ger.ger ger.str
+# time ./vlosbas dil-la.txt ger.str
+# mv Z.txt Z-la-001.txt
+# time ./vlosbas dil-la-004.txt ger.str
+# mv Z.txt Z-la-004.txt
+time ./vlosbas dil-la-002.txt ger.str
+mv Z.txt Z-la-002.txt
+time ./vlosbas dil-la-003.txt ger.str
+mv Z.txt Z-la-003.txt

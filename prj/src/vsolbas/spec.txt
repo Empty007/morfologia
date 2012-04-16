@@ -1,0 +1,54 @@
+typedef struct {
+  int *A; lado esquerdo: (int *) malloc (sizeof(int) * ninterv * n4bytes)
+  int *B; lado direito : (int *) malloc (sizeof(int) * ninterv * n4bytes)
+  int *ind; ind. de cada intervalo:  (int *) malloc (sizeof(int) * ninterv)
+  int size ;      no. de intervalos
+  int total ;     no. de intervalos
+  int nv ;        no. de variaveis
+  int nb;         = n4bytes = (nvars+31)/32;
+  win_struc win;  especificacao da janela
+} trv_struc ;
+
+typedef struct {      /* window specification data structure */
+        int  *data ; (int *) malloc (sizeof (int) * (w * h + NB1)/NB)
+        int  hsize ;
+        int  wsize ;
+        int  size  ; numero de variaveis 
+} win_struc ;
+
+/* Struct. el. type */
+
+#define  MM_IMG     0
+#define  MM_MAT     1
+#define  MM_GRAPH   2
+
+/* Node of a graph */
+
+typedef struct {
+   int n;                   /* number of node neighbors */
+   int val;                 /* node value */
+   int x;                   /* node coordinates */
+   int y;
+   int *neig;               /* pointer to the first element
+                               of an array of node indices */
+} mm_node;
+
+/* Graph based structuring function */
+
+typedef struct {
+   int n;                    /* graph number of nodes */
+   mm_node *nodes;           /* pointer to the first element of an
+                                array of nodes */    
+} mm_graph;
+
+/* Generic structuring element: */
+
+typedef struct _gen_str {
+  int tag;
+  int m, n, p;     /* dimensions */
+  int x[3][3];     /* elementary matrix */
+  short *dat;      /* general matrix */ 
+                   (short *) malloc (sizeof (short) * m * n * p)
+  mm_graph g;      /* graph based str. el. */
+} mat_str;
+

@@ -1,0 +1,19 @@
+BASE 16 16
+WINSPEC    11    11    16
+0 aa0fc000 7e0 0 
+3dbc   0 
+b5bc   0 
+79bc   0 
+f1bc   0 
+3d9e   0 
+b59e   0 
+799e   0 
+f19e   0 
+3dad   0 
+b5ad   0 
+79ad   0 
+f1ad   0 
+3d8f   0 
+b58f   0 
+798f   0 
+f18f   0 

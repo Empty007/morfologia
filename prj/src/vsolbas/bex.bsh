@@ -1,0 +1,23 @@
+make base
+./base
+~/prj/bin/strger 000011000.str
+~/prj/bin/vdilbas base.txt ron.txt 000011000.str
+~/prj/bin/vdspbas ron.txt dil.txt 200
+
+# enscript dil.txt | lpr -Pcompasso@feijoada
+
+less dil.txt
+
+# time ./vseqbas ron.txt 000011000.str
+
+~/prj/bin/verobas base.txt ron.txt 000011000.str
+~/prj/bin/vdspbas ron.txt ero.txt 200
+
+# enscript dil.txt | lpr -Pcompasso@feijoada
+# enscript ero.txt | lpr -Pcompasso@feijoada
+
+rm -f base.txt
+rm -f 000011000.str
+rm -f ron.txt
+rm -f dil.txt
+rm -f ero.txt
